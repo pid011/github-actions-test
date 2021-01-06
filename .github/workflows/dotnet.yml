@@ -24,6 +24,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Run program
+      shell: bash
       env: 
         TEST_KEY: ${{ secrets.TEST_KEY }}
-      run: dotnet run --project ./TestApp/TestApp.csproj --no-build
+      run: dotnet run --project ./TestApp/TestApp.csproj --no-build -- "$TEST_KEY"
