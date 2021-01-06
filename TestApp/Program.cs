@@ -1,4 +1,9 @@
 ﻿using System;
 
-string value = Environment.GetEnvironmentVariable("TestKey");
-Console.WriteLine(value ?? "Cannot found enviroment varivable.");
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine(args[0]);
+    }
+}
