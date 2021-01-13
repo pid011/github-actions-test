@@ -10,6 +10,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: test_env
 
     steps:
     - uses: actions/checkout@v2
@@ -27,7 +28,7 @@ jobs:
     - name: Check secrets
       shell: bash
       env:
-        TEST_KEY: ${{ secrets.TEST_KEY }}
+        TEST_KEY: ${{ env.test_key }}
       run: echo $TEST_KEY
     - name: Run program
       shell: bash
